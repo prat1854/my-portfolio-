@@ -59,7 +59,7 @@ export default function HeroSection() {
               className="flex flex-wrap justify-center md:justify-start gap-4 mt-8 md:mt-12"
             >
               <Link 
-                href="https://www.linkedin.com/in/prateek-bajpayee-313454253" 
+                href="https://www.linkedin.com/in/prateek-vajpayee-313454253" 
                 className="flex items-center gap-2 bg-indigo-100/80 dark:bg-white/10 border border-indigo-200 dark:border-white/20 text-indigo-700 dark:text-white px-4 sm:px-6 py-2 sm:py-3 rounded-sm font-medium hover:bg-indigo-200/80 dark:hover:bg-white/20 transition-all"
                 aria-label="View my LinkedIn profile"
                 target="_blank"
