@@ -29,7 +29,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 md:space-y-6"
+              className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 md:space-y-6 text-[var(--text-color)]"
             >
               <p>
                 My name is Prateek Bajpai, I'm {" "}
