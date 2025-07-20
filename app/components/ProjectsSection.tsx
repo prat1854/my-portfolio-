@@ -24,7 +24,7 @@ export default function ProjectsSection() {
     },
     { 
       name: "To-Do List Application",
-      link: "https://github.com/prat1854/todo-app", 
+      link: "https://github.com/prat1854/todo_app", 
       image: "/todo_list.png",
       description: "Task management system with CRUD operations and persistent storage.",
       tech: "React, MySQL, Express, Node.js"
