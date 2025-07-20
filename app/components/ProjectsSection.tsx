@@ -16,15 +16,8 @@ type Project = {
 export default function ProjectsSection() {
   const projects: Project[] = [
     { 
-      name: "RestaurantBuddy",
-      link: "restaurant-buddy.png/", 
-      image: "/restaurant-buddy.png",
-      description: "A comprehensive restaurant management platform that streamlines operations with online ordering, digital menus via QR codes, and efficient kitchen management. Built for restaurant owners to optimize their business.",
-      tech: "ReactJS , NextJS , TailwindCSS ,"
-    },
-    { 
       name: "E-Commerce Web Application",
-      link: "https://github.com/prat1854/ecommerce-platform", 
+      link: "https://github.com/prat1854/Frontend", 
       image: "/e-commer.png",
       description: "Full-stack e-commerce platform with user authentication, product browsing, and payment gateway integration.",
       tech: "React, Redux, Node.js, Express, MongoDB, Razorpay"
@@ -36,6 +29,14 @@ export default function ProjectsSection() {
       description: "Task management system with CRUD operations and persistent storage.",
       tech: "React, MySQL, Express, Node.js"
     },
+    {
+      name: "Global Journal",
+      link: "https://www.globaljournal.co.in",
+      image: "/global_journal.png", // replace with your actual image path or URL
+      description: "Multidisciplinary peer-reviewed journal featuring global research contributions.",
+      tech: "Academic Publishing, Web Platform ,ReactJS + PHP + MySQL "
+    },
+
   ];
 
   return (
