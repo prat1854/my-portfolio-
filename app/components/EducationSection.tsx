@@ -11,23 +11,23 @@ type Education = {
 export default function EducationSection() {
   const educationList: Education[] = [
     {
-      degree: "Master of Computer Applications (MCA)",
-      school: "Madhav Institute of Technology and Science, Gwalior",
-      period: "2023 - Present (Expected 2025)"
+      degree: "Master of Computer Applications (MCA) ",
+      school: "Madhav Institute of Technology and Science, Gwalior (M.P.)",
+      period: "2023 - 2025"
     },
     {
       degree: "Bachelor of Science in Computer Science",
-      school: "JAIN COLLEGE, Gwalior (M.P.)",
+      school: "Jain College, Gwalior (M.P.)",
       period: "2019 - 2022"
     },
     {
       degree: "Intermediate/+2 | PCM | MPBOARD",
-      school: "",
+      school: "Siddharth public school, Gwalior (M.P.)",
       period: "2020"
     },
     {
       degree: "Matriculation | CBSE",
-      school: "",
+      school: "ECS Bagless School, Gwalior (M.P.)",
       period: "2018"
     }
   ];
