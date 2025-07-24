@@ -23,8 +23,9 @@ export default function SkillsSection() {
       title: "Backend",
       skills: [
         "Node.js, Express.js",
-        "RESTful APIs",
-        "SQL, MySQL",
+        "PHP",
+        "RESTful APIs",   
+        "SQL, MySQL, MongoDB",  
         "Authentication & Security",
         "Server-side Rendering"
       ]
