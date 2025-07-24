@@ -34,10 +34,9 @@ export default function SkillsSection() {
       skills: [
         "Git, GitHub",
         "VS Code",
-        "Figma, Adobe XD",
         "Postman",
         "Webpack, Vite",
-        "CI/CD Pipelines"
+        "Stack Overflow",
       ]
     },
     {
