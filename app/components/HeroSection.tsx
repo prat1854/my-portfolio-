@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import { Github, Linkedin, Mail, Phone, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, ArrowDown, FileText } from "lucide-react";
 
 export default function HeroSection() {
   const scrollToNextSection = () => {
@@ -82,6 +82,15 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
               >
                 <Github size={18} aria-hidden="true" /> GitHub
+              </Link>
+              <Link 
+                href="/resume.pdf" 
+                className="flex items-center gap-2 bg-gradient-to-r from-purple-100/80 to-pink-100/80 dark:from-white/5 dark:to-white/10 border border-purple-200 dark:border-white/20 text-purple-700 dark:text-white px-4 sm:px-6 py-2 sm:py-3 rounded-sm font-medium hover:shadow-[0_0_20px_rgba(147,51,234,0.3)] dark:hover:shadow-[0_0_20px_rgba(147,51,234,0.4)] hover:scale-105 transition-all duration-300"
+                aria-label="Download my resume"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FileText size={18} aria-hidden="true" /> Resume
               </Link>
             </motion.div>
           </motion.div>

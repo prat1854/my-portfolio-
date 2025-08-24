@@ -15,12 +15,19 @@ type Project = {
 
 export default function ProjectsSection() {
   const projects: Project[] = [
+    {
+      name: "Restrobuddy - Restaurant Management",
+      link: "https://restrobuddy.in",
+      image: "/restaurant-buddy.png",
+      description: "A comprehensive restaurant management system with online ordering, table reservations, and kitchen management features.",
+      tech: "React, Node.js, MySQL, Express"
+    },
     { 
       name: "E-Commerce Web Application",
       link: "https://github.com/prat1854/Frontend", 
       image: "/e-commer.png",
       description: "Full-stack e-commerce platform with user authentication, product browsing, and payment gateway integration.",
-      tech: "React, Redux, Node.js, Express, MongoDB, Razorpay"
+      tech: "React, Redux, Node.js, Express, MySQL, Razorpay"
     },
     { 
       name: "To-Do List Application",
@@ -34,7 +41,7 @@ export default function ProjectsSection() {
       link: "https://www.globaljournal.co.in",
       image: "/global_journal.png", // replace with your actual image path or URL
       description: "Multidisciplinary peer-reviewed journal featuring global research contributions.",
-      tech: "Academic Publishing, Web Platform ,ReactJS + PHP + MySQL "
+      tech: "Academic Publishing, Web Platform ,ReactJS + PHP "
     },
 
   ];
