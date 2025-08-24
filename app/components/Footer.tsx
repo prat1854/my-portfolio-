@@ -9,12 +9,12 @@ export default function Footer() {
       <div className="container mx-auto px-12 md:px-20">
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div>
-            <h2 className="text-2xl font-light mb-6 text-gray-800 dark:text-white">Contact</h2>
+            <h2 className="text-2xl font-light mb-6 text-gray-800 dark:text-white [text-shadow:0_0_10px_rgba(99,102,241,0.2)] dark:[text-shadow:0_0_15px_rgba(99,102,241,0.3)]">Contact</h2>
             <ul className="space-y-3">
               <li>
                 <Link 
                   href="mailto:prateekvajpai1854@gmail.com" 
-                  className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors flex items-center gap-2"
+                  className="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-300 hover:[text-shadow:0_0_10px_rgba(99,102,241,0.3)] dark:hover:[text-shadow:0_0_15px_rgba(99,102,241,0.4)] transition-all duration-300 flex items-center gap-2"
                   aria-label="Send me an email"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -27,7 +27,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="tel:+917772887731" 
-                  className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors flex items-center gap-2"
+                  className="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-300 hover:[text-shadow:0_0_10px_rgba(99,102,241,0.3)] dark:hover:[text-shadow:0_0_15px_rgba(99,102,241,0.4)] transition-all duration-300 flex items-center gap-2"
                   aria-label="Call me"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -40,11 +40,11 @@ export default function Footer() {
           </div>
           
           <div className="mt-8 md:mt-0">
-            <h2 className="text-2xl font-light mb-6 text-white">Connect</h2>
+            <h2 className="text-2xl font-light mb-6 text-gray-800 dark:text-white [text-shadow:0_0_10px_rgba(99,102,241,0.2)] dark:[text-shadow:0_0_15px_rgba(99,102,241,0.3)]">Connect</h2>
             <div className="flex space-x-4">
               <Link 
                 href="https://www.linkedin.com/in/prateek-bajpayee-313454253" 
-                className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                className="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-300 hover:[text-shadow:0_0_10px_rgba(99,102,241,0.3)] dark:hover:[text-shadow:0_0_15px_rgba(99,102,241,0.4)] transition-all duration-300 flex items-center gap-2"
                 aria-label="View my LinkedIn profile"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -53,7 +53,7 @@ export default function Footer() {
               </Link>
               <Link 
                 href="https://github.com/prat1854" 
-                className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                className="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-300 hover:[text-shadow:0_0_10px_rgba(99,102,241,0.3)] dark:hover:[text-shadow:0_0_15px_rgba(99,102,241,0.4)] transition-all duration-300 flex items-center gap-2"
                 aria-label="View my GitHub profile"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-500 dark:text-gray-400 [text-shadow:0_0_5px_rgba(99,102,241,0.1)] dark:[text-shadow:0_0_5px_rgba(99,102,241,0.2)]">
             © {new Date().getFullYear()} Prateek Bajpai. All rights reserved.
           </p>
         </div>

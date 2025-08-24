@@ -7,8 +7,15 @@ import { Typewriter } from "react-simple-typewriter";
 import { Github, Linkedin, Mail, Phone, ArrowDown } from "lucide-react";
 
 export default function HeroSection() {
+  const scrollToNextSection = () => {
+    const viewportHeight = window.innerHeight;
+    window.scrollTo({
+      top: viewportHeight,
+      behavior: 'smooth'
+    });
+  };
   return (
-    <header className="relative bg-[var(--background)] dark:bg-[var(--dark-bg)] text-[var(--text-color)] dark:text-white py-12 md:py-20 min-h-screen flex items-center overflow-hidden z-10">
+    <header className="relative bg-[var(--background)] dark:bg-[var(--dark-bg)] text-[var(--text-color)] dark:text-white py-12 md:py-20 min-h-screen flex items-center overflow-hidden z-10 before:absolute before:inset-0 before:bg-gradient-to-br before:from-indigo-50/30 before:via-transparent before:to-pink-50/30 dark:before:from-indigo-950/30 dark:before:via-transparent dark:before:to-pink-950/30 before:animate-gradient-shift">
       <div className="container mx-auto px-8 md:px-12 lg:px-20 relative z-10">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between">
           <motion.div 
@@ -21,9 +28,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-5xl sm:text-6xl md:text-7xl font-light mb-8 md:mb-12 tracking-tight text-[var(--text-color)] dark:text-white"
+              className="text-5xl sm:text-6xl md:text-7xl font-light mb-8 md:mb-12 tracking-tight text-[var(--text-color)] dark:text-white [text-shadow:0_0_10px_rgba(99,102,241,0.2)] dark:[text-shadow:0_0_15px_rgba(99,102,241,0.3)]"
             >
-              <span className="text-indigo-400">Welcome</span><span className="animate-pulse">.</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 dark:from-indigo-400 dark:to-purple-400 animate-gradient-flow">Welcome</span><span className="animate-bounce inline-block ml-1 text-indigo-500 dark:text-indigo-400">.</span>
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -33,7 +40,7 @@ export default function HeroSection() {
             >
               <p>
                 My name is Prateek Bajpai, I'm {" "}
-                <span className="font-medium text-indigo-300">
+                <span className="font-medium text-indigo-500 dark:text-indigo-300 [text-shadow:0_0_10px_rgba(99,102,241,0.2)] dark:[text-shadow:0_0_15px_rgba(99,102,241,0.3)]">
                   <Typewriter
                     words={['a Frontend Developer', 'a Creative Coder', 'a React Enthusiast']}
                     loop
@@ -60,7 +67,7 @@ export default function HeroSection() {
             >
               <Link 
                 href="https://www.linkedin.com/in/prateek-vajpayee-313454253" 
-                className="flex items-center gap-2 bg-indigo-100/80 dark:bg-white/10 border border-indigo-200 dark:border-white/20 text-indigo-700 dark:text-white px-4 sm:px-6 py-2 sm:py-3 rounded-sm font-medium hover:bg-indigo-200/80 dark:hover:bg-white/20 transition-all"
+                className="flex items-center gap-2 bg-gradient-to-r from-indigo-100/80 to-purple-100/80 dark:from-white/5 dark:to-white/10 border border-indigo-200 dark:border-white/20 text-indigo-700 dark:text-white px-4 sm:px-6 py-2 sm:py-3 rounded-sm font-medium hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] dark:hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:scale-105 transition-all duration-300"
                 aria-label="View my LinkedIn profile"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -69,7 +76,7 @@ export default function HeroSection() {
               </Link>
               <Link 
                 href="https://github.com/prat1854" 
-                className="flex items-center gap-2 bg-indigo-100/80 dark:bg-white/10 border border-indigo-200 dark:border-white/20 text-indigo-700 dark:text-white px-4 sm:px-6 py-2 sm:py-3 rounded-sm font-medium hover:bg-indigo-200/80 dark:hover:bg-white/20 transition-all"
+                className="flex items-center gap-2 bg-gradient-to-r from-indigo-100/80 to-purple-100/80 dark:from-white/5 dark:to-white/10 border border-indigo-200 dark:border-white/20 text-indigo-700 dark:text-white px-4 sm:px-6 py-2 sm:py-3 rounded-sm font-medium hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] dark:hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:scale-105 transition-all duration-300"
                 aria-label="View my GitHub profile"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,7 +93,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="relative block"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 bg-gray-100/50 dark:bg-gray-800/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transition-all duration-500 group before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-br before:from-indigo-500/10 before:to-pink-500/5 before:blur-xl before:opacity-50 before:z-[5]">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 bg-gray-100/50 dark:bg-gray-800/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.3)] dark:hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] transition-all duration-500 group before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-br before:from-indigo-500/20 before:to-pink-500/10 dark:before:from-indigo-500/30 dark:before:to-pink-500/20 before:blur-xl before:opacity-50 before:z-[5]">
               <Image 
                 src="/hero_setup.avif" 
                 alt="Developer workspace setup" 
@@ -98,13 +105,13 @@ export default function HeroSection() {
               
               {/* Contact icons positioned over the image */}
               <div className="absolute bottom-3 right-3 flex gap-2 z-30">
-                <Link href="mailto:prateekvajpai1854@gmail.com" className="text-indigo-700/90 dark:text-white/90 hover:text-indigo-800 dark:hover:text-white transition-colors bg-gray-100/50 dark:bg-gray-800/50 p-2 rounded-full" aria-label="Email me">
+                <Link href="mailto:prateekvajpai1854@gmail.com" className="text-indigo-600 dark:text-white/90 hover:text-white dark:hover:text-indigo-300 transition-all duration-300 bg-white/80 dark:bg-gray-800/50 hover:bg-indigo-500 dark:hover:bg-indigo-600/30 p-2 rounded-full hover:shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:scale-110" aria-label="Email me">
                   <Mail size={18} aria-hidden="true" />
                 </Link>
-                <Link href="https://github.com/prat1854" className="text-indigo-700/90 dark:text-white/90 hover:text-indigo-800 dark:hover:text-white transition-colors bg-gray-100/50 dark:bg-gray-800/50 p-2 rounded-full" aria-label="View my GitHub profile" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/prat1854" className="text-indigo-600 dark:text-white/90 hover:text-white dark:hover:text-indigo-300 transition-all duration-300 bg-white/80 dark:bg-gray-800/50 hover:bg-indigo-500 dark:hover:bg-indigo-600/30 p-2 rounded-full hover:shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:scale-110" aria-label="View my GitHub profile" target="_blank" rel="noopener noreferrer">
                   <Github size={18} aria-hidden="true" />
                 </Link>
-                <Link href="tel:+917772887731" className="text-indigo-700/90 dark:text-white/90 hover:text-indigo-800 dark:hover:text-white transition-colors bg-gray-100/50 dark:bg-gray-800/50 p-2 rounded-full" aria-label="Call me">
+                <Link href="tel:+917772887731" className="text-indigo-600 dark:text-white/90 hover:text-white dark:hover:text-indigo-300 transition-all duration-300 bg-white/80 dark:bg-gray-800/50 hover:bg-indigo-500 dark:hover:bg-indigo-600/30 p-2 rounded-full hover:shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:scale-110" aria-label="Call me">
                   <Phone size={18} aria-hidden="true" />
                 </Link>
               </div>
@@ -117,10 +124,14 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            className="text-gray-700 dark:text-gray-400 flex flex-col items-center"
+            className="text-gray-600 dark:text-gray-400 flex flex-col items-center hover:text-indigo-500 dark:hover:text-indigo-400 transition-all duration-300 cursor-pointer group"
+            onClick={scrollToNextSection}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && scrollToNextSection()}
           >
-            <span className="text-sm mb-2">Scroll Down</span>
-            <ArrowDown size={18} aria-hidden="true" />
+            <span className="text-sm mb-2 group-hover:animate-bounce">Scroll Down</span>
+            <ArrowDown size={18} className="animate-bounce" aria-hidden="true" />
           </motion.div>
         </div>
       </div>
