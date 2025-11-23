@@ -14,7 +14,7 @@ export default function Home() {
     <div className="min-h-screen bg-[var(--background)] dark:bg-[var(--dark-bg)] relative">
       {/* Background decoration with proper accessibility */}
       <BackgroundDecoration />
-      
+
       {/* Main content sections */}
       <main>
         <HeroSection />
@@ -23,7 +23,7 @@ export default function Home() {
         <SkillsSection />
         <EducationSection />
       </main>
-      
+
       {/* Footer */}
       <Footer />
     </div>

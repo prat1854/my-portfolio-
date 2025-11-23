@@ -35,7 +35,7 @@ export default function EducationSection() {
   return (
     <section id="education" className="py-20 bg-[var(--background)] dark:bg-[var(--dark-bg)] relative z-10">
       <div className="container mx-auto px-12 md:px-20 relative z-10">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -44,17 +44,17 @@ export default function EducationSection() {
         >
           Education
         </motion.h2>
-        
+
         <div className="max-w-3xl space-y-8">
           {educationList.map((edu, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.5, 
+              transition={{
+                duration: 0.5,
                 delay: index * 0.1,
-                ease: [0.1, 0.25, 0.3, 1] 
+                ease: [0.1, 0.25, 0.3, 1]
               }}
               viewport={{ once: true, margin: "-100px" }}
               className="border-t border-gray-200 dark:border-gray-700 pt-5 hover:border-[var(--accent)] dark:hover:border-[var(--accent)] transition-colors duration-300"

@@ -22,16 +22,16 @@ export default function ProjectsSection() {
       description: "A comprehensive restaurant management system with online ordering, table reservations, and kitchen management features.",
       tech: "React, Node.js, MySQL, Express"
     },
-    { 
+    {
       name: "E-Commerce Web Application",
-      link: "https://github.com/prat1854/Frontend", 
+      link: "https://github.com/prat1854/Frontend",
       image: "/e-commer.png",
       description: "Full-stack e-commerce platform with user authentication, product browsing, and payment gateway integration.",
       tech: "React, Redux, Node.js, Express, MySQL, Razorpay"
     },
-    { 
+    {
       name: "To-Do List Application",
-      link: "https://github.com/prat1854/todo_app", 
+      link: "https://github.com/prat1854/todo_app",
       image: "/todo_list.png",
       description: "Task management system with CRUD operations and persistent storage.",
       tech: "React, MySQL, Express, Node.js"
@@ -49,7 +49,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20 bg-[var(--background)] dark:bg-[var(--dark-bg)] relative z-10">
       <div className="container mx-auto px-12 md:px-20 relative z-10">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -58,35 +58,35 @@ export default function ProjectsSection() {
         >
           Projects
         </motion.h2>
-        
+
         <div className="max-w-3xl space-y-12">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.5, 
+              transition={{
+                duration: 0.5,
                 delay: index * 0.1,
-                ease: [0.1, 0.25, 0.3, 1] 
+                ease: [0.1, 0.25, 0.3, 1]
               }}
               viewport={{ once: true, margin: "-100px" }}
               className="border-t border-gray-200 dark:border-gray-700 pt-5 hover:border-[var(--accent)] dark:hover:border-[var(--accent)] transition-colors duration-300"
             >
-              <Link 
+              <Link
                 href={project.link}
                 className="group block"
-                target="_blank" 
-                rel="noopener noreferrer" 
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={`View ${project.name} project`}
               >
                 <div className="flex flex-col md:flex-row gap-6">
-                  <motion.div 
+                  <motion.div
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.3 }}
                     className="md:w-1/3 relative h-48 overflow-hidden rounded-md bg-gray-100 dark:bg-gray-700"
                   >
-                    <Image 
+                    <Image
                       src={project.image}
                       alt={`Screenshot of ${project.name}`}
                       fill

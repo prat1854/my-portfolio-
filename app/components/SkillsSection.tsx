@@ -24,8 +24,8 @@ export default function SkillsSection() {
       skills: [
         "Node.js, Express.js",
         "PHP",
-        "RESTful APIs",   
-        "SQL, MySQL, MongoDB",  
+        "RESTful APIs",
+        "SQL, MySQL, MongoDB",
         "Authentication & Security",
         "Server-side Rendering"
       ]
@@ -56,7 +56,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="py-20 bg-[var(--background)] dark:bg-[var(--dark-bg)] relative z-10">
       <div className="container mx-auto px-12 md:px-20">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -65,11 +65,11 @@ export default function SkillsSection() {
         >
           Skills
         </motion.h2>
-        
+
         <div className="max-w-3xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
             {skillCategories.map((category, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
