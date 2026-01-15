@@ -15,12 +15,20 @@ type Project = {
 export default function ProjectsSection() {
   const projects: Project[] = [
     {
-      name: "Restrobuddy - Restaurant Management",
-      link: "https://restrobuddy.in",
-      image: "/restaurant-buddy.png",
+      name: "Lordjournals - Research Publishing Platform",
+      link: "https://lordjournals.com/",
+      image: "/lordjournals.png",
       description:
-        "A comprehensive restaurant management system with online ordering, table reservations, and kitchen management features.",
-      tech: "React, Node.js, MySQL, Express"
+        "A research and publishing journal platform with dynamic article listings, search functionality, and responsive UI built using React.",
+      tech: "React.js, JavaScript (ES6+), REST APIs, CSS, Responsive Design"
+    },
+    {
+      name: "Global Journal - Academic Publication Platform",
+      link: "https://www.globaljournal.co.in",
+      image: "/global_journal.png",
+      description:
+        "Multidisciplinary peer-reviewed journal featuring global research contributions.",
+      tech: "Academic Publishing, Web Platform, ReactJS + PHP"
     },
     {
       name: "E-Commerce Web Application",
@@ -37,14 +45,6 @@ export default function ProjectsSection() {
       description:
         "Task management system with CRUD operations and persistent storage.",
       tech: "React, MySQL, Express, Node.js"
-    },
-    {
-      name: "Global Journal",
-      link: "https://www.globaljournal.co.in",
-      image: "/global_journal.png",
-      description:
-        "Multidisciplinary peer-reviewed journal featuring global research contributions.",
-      tech: "Academic Publishing, Web Platform, ReactJS + PHP"
     }
   ];
 
