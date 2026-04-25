@@ -125,7 +125,7 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                href="/resume0_update1.pdf"
+                href="/Prateek_Bajpai26.pdf"
                 download
                 target="_blank"
                 className="flex items-center gap-2 bg-white border-2 border-purple-600 text-purple-700 
