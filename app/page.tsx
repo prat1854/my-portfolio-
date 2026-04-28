@@ -12,11 +12,9 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[var(--background)] dark:bg-[var(--dark-bg)] relative">
-      {/* Background decoration with proper accessibility */}
+    <div className="relative min-h-screen bg-[var(--background)]">
       <BackgroundDecoration />
 
-      {/* Main content sections */}
       <main>
         <HeroSection />
         <AboutSection />
@@ -26,7 +24,6 @@ export default function Home() {
         <CertificationsSection />
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

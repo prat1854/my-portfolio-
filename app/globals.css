@@ -3,57 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --accent: #3b82f6;
-  --background: #ffffff;
-  --text-color: #111827;
-  --muted: #f3f4f6;
-  --border: #e5e7eb;
+  --accent: #4f46e5;
+  --accent-strong: #4338ca;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text-color: #0f172a;
+  --text-muted: #475569;
+  --border: #e2e8f0;
+  --ring: rgba(79, 70, 229, 0.3);
 }
 
 .dark {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
-  --accent: #60a5fa;
-  --background: #0f172a;
+  --accent: #818cf8;
+  --accent-strong: #6366f1;
+  --background: #020617;
+  --surface: #0b1220;
   --text-color: #f8fafc;
-  --muted: #1e293b;
-  --border: #334155;
+  --text-muted: #94a3b8;
+  --border: #1e293b;
+  --ring: rgba(129, 140, 248, 0.35);
 }
 
 body {
   background: var(--background);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 @layer base {
+  * {
+    @apply border-[var(--border)];
+  }
+
   body {
-    @apply bg-background text-gray-900 dark:text-gray-100;
+    @apply bg-[var(--background)] text-[var(--text-color)] selection:bg-indigo-200/70 dark:selection:bg-indigo-500/30;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply tracking-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
   }
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
+  --color-foreground: var(--text-color);
   --color-accent: var(--accent);
-  --color-muted: var(--muted);
+  --color-muted: var(--text-muted);
   --color-border: var(--border);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-section {
-  padding: 2rem 0;
-}
+@layer components {
+  .section-shell {
+    @apply relative z-10 py-16 md:py-20;
+  }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  .content-wrap {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .section-kicker {
+    @apply mb-2 text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)];
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold text-[var(--text-color)] md:text-4xl;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-[var(--border)] bg-[var(--surface)] backdrop-blur;
+  }
 }

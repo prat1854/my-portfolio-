@@ -48,7 +48,6 @@ export default function SkillsSection() {
     },
     {
       title: "Soft Skills",
-      // Soft skills ke liye icon optional chhod diya
       skills: [
         "Problem Solving",
         "Communication",
@@ -61,43 +60,36 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section
-      id="skills"
-      className="py-20 bg-[var(--background)] dark:bg-[var(--dark-bg)] relative z-10"
-    >
-      <div className="container mx-auto px-12 md:px-20">
-        <motion.h2
+    <section id="skills" className="section-shell">
+      <div className="content-wrap">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-4xl font-light mb-12 text-[var(--text-color)]"
+          className="mb-12"
         >
-          Skills
-        </motion.h2>
+          <p className="section-kicker">Capabilities</p>
+          <h2 className="section-title">Skills I use to ship quality products</h2>
+        </motion.div>
 
-        <div className="max-w-3xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {skillCategories.map((category, index) => {
               const Icon = category.icon;
               return (
                 <motion.div
-                  key={index}
+                  key={category.title}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="rounded-lg p-6 transition-all duration-300
-                  bg-white/5 dark:bg-white/5
-                  hover:bg-white/10 dark:hover:bg-white/10
-                  border border-transparent hover:border-white/20"
+                  className="glass-card p-6 transition hover:border-[var(--accent)]"
                 >
-                  <h3 className="text-xl font-medium mb-5 text-[var(--text-color)] flex items-center gap-2">
+                  <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-[var(--text-color)]">
                     {Icon && <Icon className="text-lg" />}
                     {category.title}
                   </h3>
-                  <ul className="space-y-2 text-[var(--text-color)] opacity-90">
+                  <ul className="space-y-2 text-sm text-[var(--text-muted)] md:text-base">
                     {category.skills.map((skill, skillIndex) => (
                       <li key={skillIndex}>{skill}</li>
                     ))}
@@ -105,7 +97,6 @@ export default function SkillsSection() {
                 </motion.div>
               );
             })}
-          </div>
         </div>
       </div>
     </section>

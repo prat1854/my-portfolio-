@@ -3,57 +3,61 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 type Project = {
   name: string;
   link: string;
   image: string;
-  description: string;
-  tech: string;
+  problem: string;
+  solution: string;
+  impact: string;
+  tech: string[];
 };
 
-export default function ProjectsSection() {
-  const projects: Project[] = [
-    {
-      name: "Lordjournals - Research Publishing Platform",
-      link: "https://lordjournals.com/",
-      image: "/lordjournals.png",
-      description:
-        "A research and publishing journal platform with dynamic article listings, search functionality, and responsive UI built using React.",
-      tech: "React.js, JavaScript (ES6+), REST APIs, CSS, Responsive Design"
-    },
-    {
-      name: "Global Journal - Academic Publication Platform",
-      link: "https://www.globaljournal.co.in",
-      image: "/global_journal.png",
-      description:
-        "Multidisciplinary peer-reviewed journal featuring global research contributions.",
-      tech: "Academic Publishing, Web Platform, ReactJS + PHP"
-    },
-    {
-      name: "E-Commerce Web Application",
-      link: "https://github.com/prat1854/Frontend",
-      image: "/e-commer.png",
-      description:
-        "Full-stack e-commerce platform with user authentication, product browsing, and payment gateway integration.",
-      tech: "React, Redux, Node.js, Express, MySQL, Razorpay"
-    },
-    {
-      name: "To-Do List Application",
-      link: "https://github.com/prat1854/todo_app",
-      image: "/todo_list.png",
-      description:
-        "Task management system with CRUD operations and persistent storage.",
-      tech: "React, MySQL, Express, Node.js"
-    }
-  ];
+const projects: Project[] = [
+  {
+    name: "Lordjournals - Research Publishing Platform",
+    link: "https://lordjournals.com/",
+    image: "/lordjournals.png",
+    problem: "Researchers struggled to discover and navigate articles quickly.",
+    solution: "Built a responsive React platform with fast filtering and clear article flow.",
+    impact: "Improved discovery UX and created a scalable structure for future journal growth.",
+    tech: ["React.js", "REST APIs", "JavaScript", "Responsive Design"],
+  },
+  {
+    name: "Global Journal - Academic Publication Platform",
+    link: "https://www.globaljournal.co.in",
+    image: "/global_journal.png",
+    problem: "Academic content was hard to organize and present consistently.",
+    solution: "Implemented a cleaner publication layout and reusable page patterns.",
+    impact: "Delivered a more readable, professional experience for global contributors.",
+    tech: ["React", "PHP", "CSS", "Content Architecture"],
+  },
+  {
+    name: "E-Commerce Web Application",
+    link: "https://github.com/prat1854/Frontend",
+    image: "/e-commer.png",
+    problem: "Users needed an end-to-end shopping flow with secure checkout.",
+    solution: "Developed product browsing, authentication, and payment integration.",
+    impact: "Enabled complete purchase flow from discovery to successful payment.",
+    tech: ["React", "Redux", "Node.js", "Express", "MySQL", "Razorpay"],
+  },
+  {
+    name: "To-Do List Application",
+    link: "https://github.com/prat1854/todo_app",
+    image: "/todo_list.png",
+    problem: "Users required a simple way to track daily task progress.",
+    solution: "Created a CRUD-based task manager with persistent data storage.",
+    impact: "Improved task consistency and reduced manual follow-up for users.",
+    tech: ["React", "Node.js", "Express", "MySQL"],
+  },
+];
 
+export default function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      className="py-20 bg-[var(--background)] dark:bg-[var(--dark-bg)] relative z-10"
-    >
-      <div className="container mx-auto px-12 md:px-20 relative z-10">
+    <section id="projects" className="section-shell">
+      <div className="content-wrap relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,35 +65,26 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <p className="text-xs uppercase tracking-widest text-[var(--accent)] mb-2">
-            My Work
+          <p className="section-kicker">Selected Work</p>
+          <h2 className="section-title">Projects with product impact</h2>
+          <p className="mt-3 max-w-2xl text-sm text-[var(--text-muted)] md:text-base">
+            Each project is presented as problem, solution, and measurable outcome so recruiters can quickly assess ownership.
           </p>
-          <h2 className="text-4xl font-light text-[var(--text-color)]">
-            Projects
-          </h2>
         </motion.div>
 
-        <div className="max-w-4xl space-y-8">
+        <div className="space-y-6">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.name}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.02 }}
               transition={{
-                duration: 0.5,
+                duration: 0.45,
                 delay: index * 0.1,
-                ease: [0.1, 0.25, 0.3, 1]
               }}
               viewport={{ once: true, margin: "-100px" }}
-              className="group relative overflow-hidden rounded-xl border 
-              border-white/10 bg-white/5 dark:bg-white/5 
-              hover:bg-white/10 hover:border-[var(--accent)]/60 
-              transition-all duration-300 shadow-sm hover:shadow-xl"
+              className="glass-card group overflow-hidden transition hover:border-[var(--accent)]"
             >
-              {/* Left accent bar */}
-              <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[var(--accent)]/80 to-transparent" />
-
               <Link
                 href={project.link}
                 className="block p-5 md:p-6"
@@ -97,47 +92,50 @@ export default function ProjectsSection() {
                 rel="noopener noreferrer"
                 aria-label={`View ${project.name} project`}
               >
-                <div className="flex flex-col md:flex-row gap-6">
-                  {/* Image */}
-                  <div className="md:w-1/3 relative h-48 overflow-hidden rounded-lg bg-gray-100/60 dark:bg-gray-800/60">
+                <div className="flex flex-col gap-6 md:flex-row">
+                  <div className="relative h-52 overflow-hidden rounded-xl border border-[var(--border)] md:w-1/3">
                     <Image
                       src={project.image}
                       alt={`Screenshot of ${project.name}`}
                       fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
                   </div>
 
-                  {/* Text content */}
-                  <div className="md:w-2/3 flex flex-col justify-center">
-                    <p className="text-xs tracking-wide uppercase text-[var(--accent)] mb-1">
+                  <div className="md:w-2/3">
+                    <p className="mb-1 text-xs uppercase tracking-[0.16em] text-[var(--accent)]">
                       Featured Project
                     </p>
-                    <h3 className="text-xl font-medium mb-2 text-[var(--text-color)] group-hover:text-[var(--accent)] transition-colors">
+                    <h3 className="text-xl font-semibold text-[var(--text-color)] transition-colors group-hover:text-[var(--accent)]">
                       {project.name}
                     </h3>
-                    <p className="text-sm md:text-base text-[var(--text-color)] opacity-80 mb-3">
-                      {project.description}
-                    </p>
+                    <div className="mt-4 space-y-2 text-sm text-[var(--text-muted)]">
+                      <p>
+                        <span className="font-medium text-[var(--text-color)]">Problem:</span> {project.problem}
+                      </p>
+                      <p>
+                        <span className="font-medium text-[var(--text-color)]">Solution:</span> {project.solution}
+                      </p>
+                      <p>
+                        <span className="font-medium text-[var(--text-color)]">Impact:</span> {project.impact}
+                      </p>
+                    </div>
 
-                    {/* Tech chips */}
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {project.tech.split(",").map((techItem, i) => (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.tech.map((techItem) => (
                         <span
-                          key={i}
-                          className="text-xs px-3 py-1 rounded-full bg-white/10 
-                          text-[var(--text-color)]/80 border border-white/10"
+                          key={techItem}
+                          className="rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--text-muted)]"
                         >
-                          {techItem.trim()}
+                          {techItem}
                         </span>
                       ))}
                     </div>
 
-                    {/* View link */}
-                    <span className="inline-flex items-center gap-1 text-sm text-[var(--accent)] group-hover:underline">
-                      View project
-                      <span aria-hidden>↗</span>
+                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-[var(--accent)]">
+                      View live/project link <ArrowUpRight size={15} />
                     </span>
                   </div>
                 </div>

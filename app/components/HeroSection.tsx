@@ -1,212 +1,221 @@
 'use client';
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
-import { Github, Linkedin, Mail, Phone, ArrowDown, FileText } from "lucide-react";
+import { ArrowDown, ArrowUpRight, FileText, Github, Linkedin } from "lucide-react";
+
+const impactStats = [
+  { label: "Production Projects", value: "4+" },
+  { label: "Core Stack", value: "React • Next.js" },
+  { label: "Focus", value: "Performance + UX" },
+];
+
+const keyboardRows = [11, 12, 11, 10];
 
 export default function HeroSection() {
-
   const scrollToNextSection = () => {
-    if (typeof window !== "undefined") {
-      const viewportHeight = window.innerHeight;
-      window.scrollTo({
-        top: viewportHeight,
-        behavior: 'smooth'
-      });
-    }
+    if (typeof window === "undefined") return;
+    const aboutSection = document.getElementById("about");
+    aboutSection?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <header
       id="top"
-      className="relative bg-[var(--background)] dark:bg-[var(--dark-bg)] text-[var(--text-color)] 
-      py-12 md:py-20 min-h-screen flex items-center overflow-hidden z-10 
-      before:absolute before:inset-0 before:bg-gradient-to-br 
-      before:from-indigo-50/15 before:via-transparent before:to-pink-50/15 
-      dark:before:from-indigo-950/30 dark:before:via-transparent dark:before:to-pink-950/30"
+      className="section-shell flex min-h-screen items-center overflow-hidden pt-8"
     >
-      <div className="container mx-auto px-8 md:px-12 lg:px-20 relative z-10">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between">
-
-          {/* LEFT CONTENT */}
+      <div className="content-wrap relative z-10">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl md:pr-8 mt-10 md:mt-0 text-center md:text-left"
+            transition={{ duration: 0.6 }}
+            className="text-center md:text-left"
           >
-
-            {/* Career Hook */}
-            <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent)] mb-4">
-              Frontend Engineer • React Specialist • UI/UX Focused
+            <p className="section-kicker">
+              Full Stack Developer | React + Next.js
             </p>
 
-            {/* Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-5xl sm:text-6xl md:text-7xl font-light mb-8 tracking-tight
-              [text-shadow:0_0_12px_rgba(99,102,241,0.25)]"
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="text-balance text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r 
-              from-indigo-500 to-purple-500 dark:from-indigo-400 dark:to-purple-400">
-                Welcome
-              </span>
-              <span className="animate-bounce inline-block ml-1 text-indigo-500 dark:text-indigo-400">
-                .
-              </span>
+              I build fast, polished web products that users actually enjoy using.
             </motion.h1>
 
-            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="mx-auto mt-6 max-w-2xl text-base text-[var(--text-muted)] md:mx-0 md:text-lg"
+            >
+              I&apos;m Prateek Bajpai, a frontend engineer focused on scalable interfaces,
+              clean architecture, and measurable UX outcomes for product teams.
+            </motion.p>
+
+            <motion.ul
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="mt-6 space-y-2 text-sm text-[var(--text-muted)]"
+            >
+              <li>Built responsive platforms for publishing and e-commerce workflows.</li>
+              <li>Optimized UI with reusable components and performance-first thinking.</li>
+              <li>Comfortable collaborating with designers, PMs, and backend teams.</li>
+            </motion.ul>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-lg md:text-xl leading-relaxed space-y-5"
-            >
-              <p>
-                Hi, I’m <span className="font-semibold text-indigo-600 dark:text-indigo-400">Prateek Bajpai</span> —{" "}
-                <span className="font-semibold text-indigo-700 dark:text-indigo-300">
-                  <Typewriter
-                    words={[
-                      'a Frontend Developer',
-                      'a React.js Specialist',
-                      'a UI-Focused Web Engineer',
-                      'a Next.js Developer',
-                      'a JavaScript Enthusiast',
-                      'a Clean Code Advocate',
-                      'a Performance-Driven Dev',
-                      'a Problem-Solving Engineer'
-                    ]}
-                    loop
-                    cursor
-                    cursorStyle="|"
-                    typeSpeed={70}
-                    deleteSpeed={50}
-                    delaySpeed={1000}
-                  />
-                </span>
-              </p>
-
-              <p>
-                I build clean, scalable, and high-performance web interfaces with modern
-                technologies. Passionate about turning designs into smooth, interactive user experiences.
-              </p>
-            </motion.div>
-
-            {/* Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="flex flex-wrap justify-center md:justify-start gap-4 mt-10"
+              transition={{ duration: 0.5, delay: 0.45 }}
+              className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start"
             >
               <Link
-                href="https://www.linkedin.com/in/prateek-vajpayee-313454253"
-                className="flex items-center gap-2 bg-white border-2 border-indigo-600 text-indigo-900 
-                px-6 py-3 rounded-sm font-semibold shadow-md 
-                hover:bg-indigo-600 hover:text-white hover:scale-105 transition-all duration-300"
-                target="_blank"
+                href="#projects"
+                className="inline-flex items-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-strong)]"
               >
-                <Linkedin size={18} /> LinkedIn
+                View Projects <ArrowUpRight size={16} />
               </Link>
-
-              <Link
-                href="https://github.com/prat1854"
-                className="flex items-center gap-2 bg-white border-2 border-indigo-600 text-indigo-700 
-                px-6 py-3 rounded-sm font-semibold shadow-md 
-                hover:bg-indigo-600 hover:text-white hover:scale-105 transition-all duration-300"
-                target="_blank"
-              >
-                <Github size={18} /> GitHub
-              </Link>
-
               <Link
                 href="/Prateek_Bajpai26.pdf"
-                download
                 target="_blank"
-                className="flex items-center gap-2 bg-white border-2 border-purple-600 text-purple-700 
-                px-6 py-3 rounded-sm font-semibold shadow-md 
-                hover:bg-purple-600 hover:text-white hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
               >
-                <FileText size={18} /> Resume
+                Download Resume <FileText size={16} />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/prateek-vajpayee-313454253"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                LinkedIn <Linkedin size={16} />
+              </Link>
+              <Link
+                href="https://github.com/prat1854"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                GitHub <Github size={16} />
               </Link>
             </motion.div>
 
-            {/* Trust Line */}
-            <p className="text-xs mt-5 text-[var(--text-color)]/70">
-              Actively seeking frontend developer roles • Open to freelance & remote work
-            </p>
-
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.55 }}
+              className="mt-8 grid gap-3 sm:grid-cols-3"
+            >
+              {impactStats.map((item) => (
+                <div key={item.label} className="glass-card p-4 text-left">
+                  <p className="text-xl font-semibold">{item.value}</p>
+                  <p className="mt-1 text-xs text-[var(--text-muted)]">{item.label}</p>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
 
-          {/* RIGHT IMAGE */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative block"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mx-auto w-full max-w-sm"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden
-            shadow-2xl border border-white/10 bg-white/5 group">
+            <motion.div
+              animate={{ y: [0, -4, 0] }}
+              transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
+              className="glass-card relative aspect-[4/5] overflow-hidden bg-[#020617] p-5"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_18%,rgba(99,102,241,0.14),transparent_45%),radial-gradient(circle_at_24%_76%,rgba(59,130,246,0.1),transparent_42%)]" />
 
-              <Image
-                src="/hero_setup.avif"
-                alt="Prateek Bajpai frontend developer workspace"
-                fill
-                className="object-cover transition-all duration-500 
-                group-hover:scale-100 scale-105"
-                priority
-              />
+              <div className="relative h-full w-full">
+                <div className="absolute bottom-[8%] left-1/2 h-6 w-[66%] -translate-x-1/2 rounded-full bg-black/45" />
 
-              {/* Floating Contact Icons */}
-              <div className="absolute bottom-3 right-3 flex gap-2 z-30">
-                <Link
-                  href="mailto:prateekvajpai1854@gmail.com"
-                  className="p-2 rounded-full bg-white/80 dark:bg-gray-800/60 
-                  hover:bg-indigo-500 hover:text-white transition-all duration-300"
-                >
-                  <Mail size={18} />
-                </Link>
+                <div className="absolute left-1/2 top-[15%] h-44 w-72 -translate-x-1/2 rotate-[-7deg]">
+                  <motion.div
+                    animate={{ y: [0, -1, 0] }}
+                    transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute inset-0 rounded-2xl border border-slate-500/45 bg-slate-900 p-2 shadow-[0_18px_38px_rgba(2,6,23,0.72)]"
+                  >
+                    <div className="absolute -right-[3px] top-2 h-[92%] w-[4px] rounded-r bg-slate-600/70" />
+                    <div className="relative h-full w-full overflow-hidden rounded-xl border border-slate-700/80 bg-[#0b1120] p-3">
+                      <div className="absolute right-4 top-2 h-7 w-12 rounded-md bg-white/10" />
+                      <div className="mb-2 flex items-center justify-between">
+                        <div className="flex gap-1.5">
+                          <span className="h-2 w-2 rounded-full bg-rose-400/80" />
+                          <span className="h-2 w-2 rounded-full bg-amber-300/80" />
+                          <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
+                        </div>
+                        <span className="text-[9px] text-slate-400">src/app/page.tsx</span>
+                      </div>
+                      <div className="font-mono text-[9px] leading-4 text-slate-300">
+                        <p><span className="text-violet-300">const</span> <span className="text-sky-300">stats</span> = [<span className="text-emerald-300">&quot;LCP -42%&quot;</span>, <span className="text-emerald-300">&quot;+28% CTR&quot;</span>];</p>
+                        <p><span className="text-violet-300">export default function</span> <span className="text-cyan-300">Hero</span>() {"{"}</p>
+                        <p className="pl-3"><span className="text-violet-300">return</span> (</p>
+                        <p className="pl-5"><span className="text-sky-300">&lt;section</span> <span className="text-amber-300">className</span>=<span className="text-emerald-300">&quot;grid lg:grid-cols-2&quot;</span><span className="text-sky-300">&gt;</span></p>
+                        <p className="pl-7"><span className="text-sky-300">&lt;CaseStudyCard</span> <span className="text-amber-300">impact</span>=<span className="text-emerald-300">{`{stats[0]}`}</span> <span className="text-sky-300">/&gt;</span></p>
+                        <p className="pl-7"><span className="text-sky-300">&lt;CTAButton</span> <span className="text-amber-300">href</span>=<span className="text-emerald-300">&quot;/contact&quot;</span> <span className="text-sky-300">/&gt;</span></p>
+                        <p className="pl-5"><span className="text-sky-300">&lt;/section&gt;</span></p>
+                        <p className="pl-3">);</p>
+                        <div className="pl-3 flex items-center gap-1">
+                          <span>{"}"}</span>
+                          <motion.span
+                            animate={{ opacity: [1, 0, 1] }}
+                            transition={{ duration: 1.1, repeat: Infinity }}
+                            className="h-3 w-0.5 rounded bg-slate-100"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute left-0 top-0 h-10 w-24 rounded-tl-2xl bg-white/5" />
+                  </motion.div>
+                </div>
 
-                <Link
-                  href="https://github.com/prat1854"
-                  target="_blank"
-                  className="p-2 rounded-full bg-white/80 dark:bg-gray-800/60 
-                  hover:bg-indigo-500 hover:text-white transition-all duration-300"
-                >
-                  <Github size={18} />
-                </Link>
+                <div className="absolute left-1/2 top-[56%] h-[2.2%] w-[12%] -translate-x-1/2 rotate-[-7deg] rounded-full bg-slate-500/70 shadow-[0_2px_8px_rgba(2,6,23,0.6)]" />
 
-                <Link
-                  href="tel:+917772887731"
-                  className="p-2 rounded-full bg-white/80 dark:bg-gray-800/60 
-                  hover:bg-indigo-500 hover:text-white transition-all duration-300"
-                >
-                  <Phone size={18} />
-                </Link>
+                <div className="absolute left-1/2 top-[58%] h-[23%] w-[82%] -translate-x-1/2 rotate-[-7deg] rounded-[1.35rem] border border-slate-500/45 bg-gradient-to-b from-slate-300/50 to-slate-700/22 p-2 shadow-[0_10px_22px_rgba(2,6,23,0.58)]">
+                  <div className="rounded-xl border border-slate-600/40 bg-slate-800/25 px-2 py-1.5">
+                    <div className="space-y-1">
+                      {keyboardRows.map((keyCount, rowIndex) => (
+                        <div key={`row-${keyCount}`} className={`grid gap-1 ${rowIndex === keyboardRows.length - 1 ? "grid-cols-10" : "grid-cols-12"}`}>
+                          {Array.from({ length: keyCount }).map((_, keyIndex) => (
+                            <span
+                              key={`${rowIndex}-${keyIndex}`}
+                              className="h-2 rounded-[3px] border border-slate-200/25 bg-gradient-to-b from-slate-100/48 to-slate-300/25 shadow-[inset_0_-1px_0_rgba(15,23,42,0.45)]"
+                            />
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="absolute bottom-2 left-1/2 h-5 w-24 -translate-x-1/2 rounded-md border border-slate-300/40 bg-slate-800/45" />
+                </div>
+
               </div>
-            </div>
+
+              <div className="absolute bottom-5 left-5 right-5 rounded-lg border border-white/10 bg-black/45 px-4 py-3 text-sm text-white backdrop-blur">
+                Open to Full Stack Developer and SDE roles
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="mt-16 flex justify-center">
+        <div className="mt-12 flex justify-center md:mt-16">
           <motion.div
             animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="cursor-pointer text-sm flex flex-col items-center 
-            hover:text-indigo-600 transition-all duration-300"
+            transition={{ repeat: Infinity, duration: 1.8 }}
+            className="flex cursor-pointer flex-col items-center text-xs uppercase tracking-[0.14em] text-[var(--text-muted)] transition hover:text-[var(--accent)]"
             onClick={scrollToNextSection}
+            role="button"
+            aria-label="Scroll to About section"
           >
-            <span className="mb-2">Scroll Down</span>
+            <span className="mb-2">Scroll for more</span>
             <ArrowDown size={18} />
           </motion.div>
         </div>
-
       </div>
     </header>
   );

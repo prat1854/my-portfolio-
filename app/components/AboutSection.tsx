@@ -4,13 +4,8 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section
-      id="about"
-      className="py-20 bg-[var(--background)] dark:bg-[var(--dark-bg)] relative z-10"
-    >
-      <div className="container mx-auto px-12 md:px-20">
-
-        {/* Section Heading */}
+    <section id="about" className="section-shell">
+      <div className="content-wrap">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -18,65 +13,35 @@ export default function AboutSection() {
           viewport={{ once: true }}
           className="mb-10"
         >
-          <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent)] mb-2">
-            Introduction
-          </p>
-          <h2 className="text-4xl font-light text-[var(--text-color)]">
-            About Me
-          </h2>
+          <p className="section-kicker">About</p>
+          <h2 className="section-title">Product-minded frontend engineer</h2>
         </motion.div>
 
-        {/* About Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-4xl rounded-2xl p-8 
-          bg-white/5 dark:bg-white/5 
-          border border-white/10 
-          hover:border-[var(--accent)]/60 
-          hover:bg-white/10 
-          transition-all duration-300"
+          className="glass-card max-w-4xl p-6 md:p-8"
         >
-          <p className="text-lg leading-relaxed text-[var(--text-color)] opacity-90">
-            <span className="font-medium bg-gradient-to-r from-[var(--accent)] to-blue-500 bg-clip-text text-transparent">
-              I’m a passionate and creative Frontend Developer
-            </span>{" "}
-            focused on building clean, modern, and user-friendly interfaces.
-            I specialize in crafting visually stunning web experiences that are both
-            performant and scalable.
-
-            <br /><br />
-
-            With a strong foundation in{" "}
-            <span className="text-[var(--accent)] font-medium">
-              React, responsive design, and modern UI animations
-            </span>
-            , I enjoy turning complex ideas into simple, intuitive designs.
-            I constantly explore new tools and frameworks to stay ahead in the
-            fast-evolving world of web development.
-
-            <br /><br />
-
-            My goal is to work on impactful real-world products where I can contribute,
-            learn continuously, and grow as a full-stack developer.
+          <p className="text-[var(--text-muted)] md:text-lg">
+            I design and build web interfaces that balance clean UI, engineering quality, and business goals.
+            My core strengths are React architecture, responsive systems, and interaction polish that makes products feel premium.
           </p>
 
-          {/* Quick Highlights */}
+          <p className="mt-4 text-[var(--text-muted)] md:text-lg">
+            I enjoy converting complex workflows into simple, intuitive experiences and collaborating across design and development to ship production-ready features.
+          </p>
+
           <div className="mt-6 flex flex-wrap gap-2">
-            {["React", "Next.js", "Tailwind CSS", "UI/UX", "Responsive Design"].map(
-              (item, i) => (
-                <span
-                  key={i}
-                  className="text-xs px-3 py-1 rounded-full 
-                  bg-white/10 border border-white/10 
-                  text-[var(--text-color)]/80"
-                >
-                  {item}
-                </span>
-              )
-            )}
+            {["React", "Next.js", "Tailwind CSS", "Performance", "Accessibility", "Design Systems"].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--text-muted)]"
+              >
+                {item}
+              </span>
+            ))}
           </div>
         </motion.div>
       </div>

@@ -7,26 +7,18 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="py-12 bg-[var(--background)] text-[var(--text-color)] relative z-10 border-t border-[var(--border)]">
-      <div className="container mx-auto px-12 md:px-20">
-
-        {/* Top: intro + contact + social */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
-
-          {/* Left: Short personal note + contact */}
+    <footer className="section-shell border-t border-[var(--border)]">
+      <div className="content-wrap">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-md">
-            <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent)] mb-2">
-              Let&apos;s collaborate
-            </p>
-            <h2 className="text-2xl font-medium mb-3 text-[var(--text-color)] [text-shadow:0_0_10px_rgba(99,102,241,0.2)] dark:[text-shadow:0_0_15px_rgba(99,102,241,0.3)]">
-              Contact
-            </h2>
-            <p className="text-sm text-[var(--text-color)] opacity-80 mb-5">
+            <p className="section-kicker">Let&apos;s Build</p>
+            <h2 className="text-2xl font-semibold text-[var(--text-color)]">Contact</h2>
+            <p className="mt-3 text-sm text-[var(--text-muted)]">
               Open to software development roles, internships and freelance projects.
               Feel free to reach out for opportunities or collaboration.
             </p>
 
-            <ul className="space-y-3">
+            <ul className="mt-5 space-y-3">
               <li>
                 <Link
                   href="mailto:prateekvajpai1854@gmail.com"
@@ -54,12 +46,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Right: Connect / Social */}
           <div className="md:text-right">
-            <h2 className="text-2xl font-medium mb-4 text-[var(--text-color)] [text-shadow:0_0_10px_rgba(99,102,241,0.2)] dark:[text-shadow:0_0_15px_rgba(99,102,241,0.3)]">
-              Connect
-            </h2>
-            <p className="text-sm text-[var(--text-color)] opacity-80 mb-4">
+            <h2 className="text-2xl font-semibold text-[var(--text-color)]">Connect</h2>
+            <p className="mb-4 mt-3 text-sm text-[var(--text-muted)]">
               You can also find my work and professional profile here:
             </p>
 
@@ -91,9 +80,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom: copyright + back to top */}
-        <div className="mt-10 pt-6 border-t border-[var(--border)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-sm text-[var(--text-color)] opacity-70">
+        <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center">
+          <p className="text-sm text-[var(--text-muted)]">
             © {year} Prateek Bajpai. All rights reserved.
           </p>
 
