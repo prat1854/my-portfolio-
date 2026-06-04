@@ -8,6 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 type Project = {
   name: string;
   link: string;
+  github?: string;
   image: string;
   problem: string;
   solution: string;
@@ -37,6 +38,7 @@ const projects: Project[] = [
   {
     name: "QuickCom - Full Stack E-Commerce Platform",
     link: "https://frontend-jade-five-39.vercel.app/",
+    github: "https://github.com/prat1854/Frontend",
     image: "/e-commer.png",
     problem: "Users needed a scalable online shopping platform with cloud-hosted infrastructure, secure authentication, product management, and seamless checkout.",
     solution: "Built a full-stack e-commerce application with React, Redux, Node.js, Express, MySQL (Aiven Cloud), Cloudinary image management, OTP authentication, admin dashboard, and Razorpay payment integration. Deployed frontend on Vercel and backend on Render.",
