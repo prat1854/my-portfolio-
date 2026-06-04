@@ -16,11 +16,12 @@ export default function SkillsSection() {
       title: "Frontend",
       icon: FaReact,
       skills: [
-        "HTML, CSS, JavaScript",
+        "HTML5, CSS3, JavaScript (ES6+)",
         "React.js, Next.js",
+        "Redux Toolkit",
         "Tailwind CSS, Material UI",
-        "Responsive Design",
-        "Frontend Testing"
+        "Responsive Web Design",
+        "REST API Integration"
       ]
     },
     {
@@ -28,22 +29,37 @@ export default function SkillsSection() {
       icon: FaNodeJs,
       skills: [
         "Node.js, Express.js",
-        "PHP",
-        "RESTful APIs",
-        "SQL, MySQL, MongoDB",
-        "Authentication & Security",
-        "Server-side Rendering"
+        "RESTful API Development",
+        "MySQL, MongoDB",
+        "JWT & OTP Authentication",
+        "Cloudinary Integration",
+        "Database Design & Optimization",
+        "PHP"
       ]
     },
     {
       title: "Tools",
       icon: FaGitAlt,
       skills: [
-        "Git, GitHub",
+        "Git & GitHub",
         "VS Code",
         "Postman",
-        "Webpack, Vite",
-        "Stack Overflow",
+        "Vercel",
+        "Render",
+        "Aiven Cloud Database",
+        "Cloudinary",
+        "Webpack, Vite"
+      ]
+    },
+    {
+      title: "Cloud & Deployment",
+      skills: [
+        "Vercel Deployment",
+        "Render Deployment",
+        "Aiven MySQL Cloud",
+        "Cloudinary Media Storage",
+        "Environment Variables",
+        "Production Debugging"
       ]
     },
     {

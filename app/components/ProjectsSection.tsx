@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 
 type Project = {
   name: string;
@@ -59,6 +59,7 @@ const projects: Project[] = [
   },
   {
     name: "To-Do List Application",
+    github: "https://github.com/prat1854/todo_app",
     link: "https://github.com/prat1854/todo_app",
     image: "/todo_list.png",
     problem: "Users required a simple way to track daily task progress.",
@@ -99,13 +100,10 @@ export default function ProjectsSection() {
               viewport={{ once: true, margin: "-100px" }}
               className="glass-card group overflow-hidden transition hover:border-[var(--accent)]"
             >
-              <Link
-                href={project.link}
-                className="block p-5 md:p-6"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`View ${project.name} project`}
-              >
+              <div
+  className="block p-5 md:p-6"
+  aria-label={`View ${project.name} project`}
+>
                 <div className="flex flex-col gap-6 md:flex-row">
                   <div className="relative h-52 overflow-hidden rounded-xl border border-[var(--border)] md:w-1/3">
                     <Image
@@ -148,12 +146,51 @@ export default function ProjectsSection() {
                       ))}
                     </div>
 
-                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-[var(--accent)]">
-                      View live/project link <ArrowUpRight size={15} />
-                    </span>
+                    <div className="mt-5 flex items-center gap-4">
+                      {project.link === "https://frontend-jade-five-39.vercel.app/" ? (
+                        <>
+  <Link
+    href={project.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-1 text-sm font-medium text-[var(--accent)]"
+  >
+    View live <ArrowUpRight size={15} />
+  </Link>
+  {project.github && (
+    <Link
+      href={project.github ?? "#"}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1 text-sm font-medium text-[var(--accent)]"
+    >
+      <Github size={15} /> GitHub
+    </Link>
+  )}
+</>
+                      ) : project.github ? (
+                        <Link
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-sm font-medium text-[var(--accent)]"
+                        >
+                          <Github size={15} /> GitHub
+                        </Link>
+                      ) : (
+                        <Link
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-sm font-medium text-[var(--accent)]"
+                        >
+                          View live <ArrowUpRight size={15} />
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -180,7 +180,7 @@ export default function HeroSection() {
                   <div className="rounded-xl border border-slate-600/40 bg-slate-800/25 px-2 py-1.5">
                     <div className="space-y-1">
                       {keyboardRows.map((keyCount, rowIndex) => (
-                        <div key={`row-${keyCount}`} className={`grid gap-1 ${rowIndex === keyboardRows.length - 1 ? "grid-cols-10" : "grid-cols-12"}`}>
+                        <div key={`row-${rowIndex}-${keyCount}`} className={`grid gap-1 ${rowIndex === keyboardRows.length - 1 ? "grid-cols-10" : "grid-cols-12"}`}>
                           {Array.from({ length: keyCount }).map((_, keyIndex) => (
                             <span
                               key={`${rowIndex}-${keyIndex}`}

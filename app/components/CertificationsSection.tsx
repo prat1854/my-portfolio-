@@ -19,7 +19,7 @@ const certifications = [
     title: "Reactjs Certificate",
     organization: "Reactjs",
     year: "2025",
-    description: "React.js certification in modern frontend development.",
+    description: "Certified in Full Stack Development with expertise in React.js, Node.js, and React Native, demonstrating practical skills in modern web and mobile application development.",
     icon: Users,
     featured: false,
     link: "/Reactjs_certificate.pdf",
