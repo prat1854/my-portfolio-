@@ -28,7 +28,7 @@ const projects: Project[] = [
   },
   {
     name: "Global Journal - Academic Publication Platform",
-    link: "https://www.globaljournal.co.in",
+    link: "https://www.globaljournal.co",
     image: "/global_journal.png",
     problem: "Academic content was hard to organize and present consistently.",
     solution: "Implemented a cleaner publication layout and reusable page patterns.",
