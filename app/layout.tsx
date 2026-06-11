@@ -1,3 +1,12 @@
+import { Inter } from 'next/font/google'
+import type { Metadata } from 'next'
+import './globals.css'
+
+import { Providers } from './providers'
+import ThemeToggle from './components/ThemeToggle'
+
+const inter = Inter({ subsets: ['latin'] })
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://my-portfolio-six-teal-67.vercel.app'),
 
@@ -70,4 +79,23 @@ export const metadata: Metadata = {
   },
 
   category: 'Technology',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <Providers>
+          <div className="fixed right-4 top-4 z-50">
+            <ThemeToggle />
+          </div>
+          {children}
+        </Providers>
+      </body>
+    </html>
+  )
 }
