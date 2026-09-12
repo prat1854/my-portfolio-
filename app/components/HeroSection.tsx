@@ -2,15 +2,13 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, FileText, Github, Linkedin } from "lucide-react";
+import { ArrowDown, ArrowUpRight, FileText, Github, Linkedin, Sparkles, CheckCircle2, Terminal } from "lucide-react";
 
 const impactStats = [
   { label: "Production Projects", value: "4+" },
-  { label: "Core Stack", value: "React • Next.js" },
-  { label: "Focus", value: "Performance + UX" },
+  { label: "Core Stack", value: "React • Next.js • Node" },
+  { label: "Focus", value: "Full Stack & UX" },
 ];
-
-const keyboardRows = [11, 12, 11, 10];
 
 export default function HeroSection() {
   const scrollToNextSection = () => {
@@ -22,201 +20,224 @@ export default function HeroSection() {
   return (
     <header
       id="top"
-      className="section-shell flex min-h-screen items-center overflow-hidden pt-8"
+      className="section-shell flex min-h-[92vh] items-center overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20"
     >
       <div className="content-wrap relative z-10">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center md:text-left"
+            transition={{ duration: 0.55 }}
+            className="text-center lg:text-left"
           >
-            <p className="section-kicker">
-              Full Stack Developer | React + Next.js
-            </p>
+            {/* Status Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400 mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>Available for Full Stack & SDE Roles</span>
+            </div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="text-balance text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl"
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-balance text-4xl font-bold leading-tight sm:text-5xl md:text-6xl text-[var(--text-color)]"
             >
-              I build fast, polished web products that users actually enjoy using.
+              Building fast, reliable web products with{" "}
+              <span className="text-[var(--accent)]">clean architecture</span>.
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="mx-auto mt-6 max-w-2xl text-base text-[var(--text-muted)] md:mx-0 md:text-lg"
             >
-              I&apos;m Prateek Bajpai, a frontend engineer focused on scalable interfaces,
-              clean architecture, and measurable UX outcomes for product teams.
+              I&apos;m <strong className="font-semibold text-[var(--text-color)]">Prateek Bajpai</strong>, a Full Stack Developer specializing in React.js, Next.js, Node.js, Express, and cloud deployments (Aiven MySQL, Vercel, Render). Passionate about scalable interfaces, robust APIs, and measurable UX outcomes.
             </motion.p>
 
             <motion.ul
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="mt-6 space-y-2 text-sm text-[var(--text-muted)]"
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-6 space-y-2.5 text-sm text-[var(--text-muted)] text-left max-w-xl mx-auto lg:mx-0"
             >
-              <li>Built responsive platforms for publishing and e-commerce workflows.</li>
-              <li>Optimized UI with reusable components and performance-first thinking.</li>
-              <li>Comfortable collaborating with designers, PMs, and backend teams.</li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={17} className="text-[var(--accent)] shrink-0 mt-0.5" />
+                <span>Production experience shipping full-stack e-commerce and research publication platforms.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={17} className="text-[var(--accent)] shrink-0 mt-0.5" />
+                <span>End-to-end expertise across React, Redux, REST APIs, MySQL, and cloud services.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 size={17} className="text-[var(--accent)] shrink-0 mt-0.5" />
+                <span>Performance-first mindset with responsive design and accessibility standards.</span>
+              </li>
             </motion.ul>
 
+            {/* CTA Hierarchy */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.45 }}
-              className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start"
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
             >
               <Link
                 href="#projects"
-                className="inline-flex items-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-strong)]"
+                className="inline-flex items-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition-all hover:bg-[var(--accent-strong)] hover:shadow-indigo-500/30 hover:scale-[1.02] active:scale-[0.98]"
               >
-                View Projects <ArrowUpRight size={16} />
+                <span>View Projects</span>
+                <ArrowUpRight size={16} />
               </Link>
               <Link
                 href="/Prateek_Bajpai26.pdf"
                 target="_blank"
-                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
-              >
-                Download Resume <FileText size={16} />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/prateek-vajpayee-313454253"
-                target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface-raised)] px-5 py-3 text-sm font-semibold text-[var(--text-color)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] hover:scale-[1.02] active:scale-[0.98]"
               >
-                LinkedIn <Linkedin size={16} />
+                <FileText size={16} />
+                <span>Download Resume</span>
               </Link>
-              <Link
-                href="https://github.com/prat1854"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
-              >
-                GitHub <Github size={16} />
-              </Link>
+              <div className="flex items-center gap-2">
+                <Link
+                  href="https://www.linkedin.com/in/prateek-vajpayee-313454253"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--surface-raised)] text-[var(--text-color)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] hover:scale-105 active:scale-95"
+                >
+                  <Linkedin size={18} />
+                </Link>
+                <Link
+                  href="https://github.com/prat1854"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--surface-raised)] text-[var(--text-color)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] hover:scale-105 active:scale-95"
+                >
+                  <Github size={18} />
+                </Link>
+              </div>
             </motion.div>
 
+            {/* Quick Impact Stats */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.55 }}
-              className="mt-8 grid gap-3 sm:grid-cols-3"
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-10 grid grid-cols-3 gap-3"
             >
               {impactStats.map((item) => (
-                <div key={item.label} className="glass-card p-4 text-left">
-                  <p className="text-xl font-semibold">{item.value}</p>
-                  <p className="mt-1 text-xs text-[var(--text-muted)]">{item.label}</p>
+                <div key={item.label} className="glass-card p-3.5 text-left">
+                  <p className="text-lg sm:text-xl font-bold text-[var(--text-color)]">{item.value}</p>
+                  <p className="mt-0.5 text-xs text-[var(--text-muted)]">{item.label}</p>
                 </div>
               ))}
             </motion.div>
           </motion.div>
 
+          {/* Right-hand Visual: Modern Code / Architecture Terminal */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mx-auto w-full max-w-sm"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="w-full max-w-lg mx-auto"
           >
-            <motion.div
-              animate={{ y: [0, -4, 0] }}
-              transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
-              className="glass-card relative aspect-[4/5] overflow-hidden bg-[#020617] p-5"
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_18%,rgba(99,102,241,0.14),transparent_45%),radial-gradient(circle_at_24%_76%,rgba(59,130,246,0.1),transparent_42%)]" />
-
-              <div className="relative h-full w-full">
-                <div className="absolute bottom-[8%] left-1/2 h-6 w-[66%] -translate-x-1/2 rounded-full bg-black/45" />
-
-                <div className="absolute left-1/2 top-[15%] h-44 w-72 -translate-x-1/2 rotate-[-7deg]">
-                  <motion.div
-                    animate={{ y: [0, -1, 0] }}
-                    transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute inset-0 rounded-2xl border border-slate-500/45 bg-slate-900 p-2 shadow-[0_18px_38px_rgba(2,6,23,0.72)]"
-                  >
-                    <div className="absolute -right-[3px] top-2 h-[92%] w-[4px] rounded-r bg-slate-600/70" />
-                    <div className="relative h-full w-full overflow-hidden rounded-xl border border-slate-700/80 bg-[#0b1120] p-3">
-                      <div className="absolute right-4 top-2 h-7 w-12 rounded-md bg-white/10" />
-                      <div className="mb-2 flex items-center justify-between">
-                        <div className="flex gap-1.5">
-                          <span className="h-2 w-2 rounded-full bg-rose-400/80" />
-                          <span className="h-2 w-2 rounded-full bg-amber-300/80" />
-                          <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
-                        </div>
-                        <span className="text-[9px] text-slate-400">src/app/page.tsx</span>
-                      </div>
-                      <div className="font-mono text-[9px] leading-4 text-slate-300">
-                        <p><span className="text-violet-300">const</span> <span className="text-sky-300">stats</span> = [<span className="text-emerald-300">&quot;LCP -42%&quot;</span>, <span className="text-emerald-300">&quot;+28% CTR&quot;</span>];</p>
-                        <p><span className="text-violet-300">export default function</span> <span className="text-cyan-300">Hero</span>() {"{"}</p>
-                        <p className="pl-3"><span className="text-violet-300">return</span> (</p>
-                        <p className="pl-5"><span className="text-sky-300">&lt;section</span> <span className="text-amber-300">className</span>=<span className="text-emerald-300">&quot;grid lg:grid-cols-2&quot;</span><span className="text-sky-300">&gt;</span></p>
-                        <p className="pl-7"><span className="text-sky-300">&lt;CaseStudyCard</span> <span className="text-amber-300">impact</span>=<span className="text-emerald-300">{`{stats[0]}`}</span> <span className="text-sky-300">/&gt;</span></p>
-                        <p className="pl-7"><span className="text-sky-300">&lt;CTAButton</span> <span className="text-amber-300">href</span>=<span className="text-emerald-300">&quot;/contact&quot;</span> <span className="text-sky-300">/&gt;</span></p>
-                        <p className="pl-5"><span className="text-sky-300">&lt;/section&gt;</span></p>
-                        <p className="pl-3">);</p>
-                        <div className="pl-3 flex items-center gap-1">
-                          <span>{"}"}</span>
-                          <motion.span
-                            animate={{ opacity: [1, 0, 1] }}
-                            transition={{ duration: 1.1, repeat: Infinity }}
-                            className="h-3 w-0.5 rounded bg-slate-100"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="absolute left-0 top-0 h-10 w-24 rounded-tl-2xl bg-white/5" />
-                  </motion.div>
-                </div>
-
-                <div className="absolute left-1/2 top-[56%] h-[2.2%] w-[12%] -translate-x-1/2 rotate-[-7deg] rounded-full bg-slate-500/70 shadow-[0_2px_8px_rgba(2,6,23,0.6)]" />
-
-                <div className="absolute left-1/2 top-[58%] h-[23%] w-[82%] -translate-x-1/2 rotate-[-7deg] rounded-[1.35rem] border border-slate-500/45 bg-gradient-to-b from-slate-300/50 to-slate-700/22 p-2 shadow-[0_10px_22px_rgba(2,6,23,0.58)]">
-                  <div className="rounded-xl border border-slate-600/40 bg-slate-800/25 px-2 py-1.5">
-                    <div className="space-y-1">
-                      {keyboardRows.map((keyCount, rowIndex) => (
-                        <div key={`row-${rowIndex}-${keyCount}`} className={`grid gap-1 ${rowIndex === keyboardRows.length - 1 ? "grid-cols-10" : "grid-cols-12"}`}>
-                          {Array.from({ length: keyCount }).map((_, keyIndex) => (
-                            <span
-                              key={`${rowIndex}-${keyIndex}`}
-                              className="h-2 rounded-[3px] border border-slate-200/25 bg-gradient-to-b from-slate-100/48 to-slate-300/25 shadow-[inset_0_-1px_0_rgba(15,23,42,0.45)]"
-                            />
-                          ))}
-                        </div>
-                      ))}
-                    </div>
+            <div className="glass-card overflow-hidden border border-[var(--border)] shadow-2xl bg-[#090d16] text-slate-200">
+              {/* Terminal Header */}
+              <div className="flex items-center justify-between border-b border-slate-800 bg-[#0f172a] px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <span className="h-3 w-3 rounded-full bg-rose-500/80" />
+                    <span className="h-3 w-3 rounded-full bg-amber-400/80" />
+                    <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
                   </div>
-                  <div className="absolute bottom-2 left-1/2 h-5 w-24 -translate-x-1/2 rounded-md border border-slate-300/40 bg-slate-800/45" />
+                  <span className="ml-2 flex items-center gap-1.5 font-mono text-xs text-slate-400">
+                    <Terminal size={13} className="text-[var(--accent)]" />
+                    QuickCom.config.ts
+                  </span>
+                </div>
+                <span className="rounded-md bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] font-medium text-emerald-400 border border-emerald-500/20">
+                  Ready
+                </span>
+              </div>
+
+              {/* Code Body */}
+              <div className="p-4 sm:p-5 font-mono text-xs leading-relaxed overflow-x-auto text-slate-300">
+                <div className="space-y-1">
+                  <p className="text-slate-500">// Full-Stack Architecture & Cloud Services</p>
+                  <p>
+                    <span className="text-purple-400">const</span>{" "}
+                    <span className="text-blue-400">engineer</span> = {"{"}
+                  </p>
+                  <p className="pl-4">
+                    <span className="text-slate-400">name:</span>{" "}
+                    <span className="text-emerald-400">&quot;Prateek Bajpai&quot;</span>,
+                  </p>
+                  <p className="pl-4">
+                    <span className="text-slate-400">role:</span>{" "}
+                    <span className="text-emerald-400">&quot;Full Stack Developer&quot;</span>,
+                  </p>
+                  <p className="pl-4">
+                    <span className="text-slate-400">frontend:</span> [
+                    <span className="text-amber-300">&quot;React.js&quot;</span>,{" "}
+                    <span className="text-amber-300">&quot;Next.js&quot;</span>,{" "}
+                    <span className="text-amber-300">&quot;Redux&quot;</span>],
+                  </p>
+                  <p className="pl-4">
+                    <span className="text-slate-400">backend:</span> [
+                    <span className="text-sky-300">&quot;Node.js&quot;</span>,{" "}
+                    <span className="text-sky-300">&quot;Express.js&quot;</span>,{" "}
+                    <span className="text-sky-300">&quot;REST APIs&quot;</span>],
+                  </p>
+                  <p className="pl-4">
+                    <span className="text-slate-400">database:</span> [
+                    <span className="text-teal-300">&quot;MySQL (Aiven)&quot;</span>,{" "}
+                    <span className="text-teal-300">&quot;MongoDB&quot;</span>],
+                  </p>
+                  <p className="pl-4">
+                    <span className="text-slate-400">cloud:</span> [
+                    <span className="text-indigo-300">&quot;Vercel&quot;</span>,{" "}
+                    <span className="text-indigo-300">&quot;Render&quot;</span>,{" "}
+                    <span className="text-indigo-300">&quot;Cloudinary&quot;</span>],
+                  </p>
+                  <p className="pl-4">
+                    <span className="text-slate-400">payments:</span>{" "}
+                    <span className="text-emerald-400">&quot;Razorpay Integrated&quot;</span>,
+                  </p>
+                  <p>{"};"}</p>
                 </div>
 
+                <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+                  <span className="flex items-center gap-1.5 text-emerald-400">
+                    <Sparkles size={13} />
+                    <span>Clean Code • Tested • Deployed</span>
+                  </span>
+                  <span className="text-slate-500">UTF-8</span>
+                </div>
               </div>
-
-              <div className="absolute bottom-5 left-5 right-5 rounded-lg border border-white/10 bg-black/45 px-4 py-3 text-sm text-white backdrop-blur">
-                Open to Full Stack Developer and SDE roles
-              </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
 
-        <div className="mt-12 flex justify-center md:mt-16">
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8 }}
-            className="flex cursor-pointer flex-col items-center text-xs uppercase tracking-[0.14em] text-[var(--text-muted)] transition hover:text-[var(--accent)]"
+        {/* Scroll Indicator */}
+        <div className="mt-14 flex justify-center md:mt-18">
+          <motion.button
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="flex cursor-pointer flex-col items-center text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)] transition-colors hover:text-[var(--accent)] focus-visible:outline-none"
             onClick={scrollToNextSection}
-            role="button"
             aria-label="Scroll to About section"
           >
-            <span className="mb-2">Scroll for more</span>
-            <ArrowDown size={18} />
-          </motion.div>
+            <span className="mb-2">Explore Portfolio</span>
+            <ArrowDown size={16} />
+          </motion.button>
         </div>
       </div>
     </header>
   );
 }
+

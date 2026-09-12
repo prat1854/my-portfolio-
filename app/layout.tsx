@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 import { Providers } from './providers'
-import ThemeToggle from './components/ThemeToggle'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -89,10 +88,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-xl focus:bg-[var(--accent)] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <Providers>
-          <div className="fixed right-4 top-4 z-50">
-            <ThemeToggle />
-          </div>
           {children}
         </Providers>
       </body>
